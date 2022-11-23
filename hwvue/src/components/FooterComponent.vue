@@ -1,5 +1,7 @@
 <template>
-    <footer class="footer"> </footer>
+    <footer class="footer"> 
+        <p> TEAM AY. Tanel Tark, Priit Rooden, Janely Adams </p>
+    </footer>
 </template>
 
 <script>
@@ -10,7 +12,7 @@ export default{
 
 <style>
 .footer {   
-    position: fixed;
+    position: sticky;
     bottom: 0;
     right: 0;
 
@@ -18,9 +20,8 @@ export default{
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
+    min-height: 40px;
 
-    padding-top: .5em;
-    padding-bottom: .5em;
     background-color: aqua;
     border-radius: .5em;
 }

@@ -1,8 +1,14 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
   </div>
+
+
+  <div id="content">
+  <aside class="sidebar"><div></div></aside>
   <PostDisplayer></PostDisplayer>
+  <aside class="sidebar"><div></div></aside>
+  </div>
+  <button v-on:click="ResetLikes">RESET</button>
 </template>
 
 <script>
@@ -12,12 +18,137 @@ import PostDisplayer from "@/components/PostDisplayer.vue";
 export default {
   name: 'HomeView',
   components: {
-    PostDisplayer,
+    PostDisplayer
     
   },
 
   data: function() {
     return {}
-  }
+  },
+  methods: {
+    ResetLikes: function() {
+    this.$store.dispatch("ResetLikeAct")
+    }
+}
+
 }
 </script>
+
+<style scoped>
+.postinfo {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.postinfo div~p{
+    color: rgb(110, 33, 33);
+}
+
+.post {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgb(243, 243, 225);
+    height: auto;
+    border-radius: .5em;
+    margin: 20px 0px 20px 1px;
+    align-content: left;
+    align-items: stretch;    
+}
+
+.post div, .post p{
+    margin: 10px 10px 10px 10px;
+}
+
+.post-text {
+    inline-size: 90%;
+    overflow-wrap: break-word;
+    padding: 3px 3px 3px 3px;
+}
+
+.post-date {
+    align-content: right;
+}
+
+.post-picture img{
+    max-width: 350;
+    margin: 0px 0px 0px 20px;
+}
+
+.poster-logo img{
+    width: 35px;
+    height:35px;
+}
+
+.post-likes img{
+    width: 20px;
+    height:20px;
+}
+
+
+.post div+p{
+    font-size: 18px;
+    max-width: 350;
+    margin: 10px 10px 10px 10px;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.sidebar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    background: rgb(212, 236, 175);
+    position: flex-justify;
+    top:auto;
+
+    height: auto;
+    border-radius: .5em;
+    margin: 20px 10px 20px 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.sidebar > div{
+    height: 100%;
+    min-height: 300px;
+}
+
+.body-text {
+    margin-right: 150px;
+    font-size: 18px;
+}
+
+.footer {
+    padding-top: .5em;
+    padding-bottom: .5em;
+    background-color: aqua;
+    border-radius: .5em;
+    position: sticky; bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+@media (max-width: 770px) {
+    .sidebar {
+        display: none;
+    }
+
+    .post-picture{
+        align-self: center;
+    }
+
+    .post-picture img{
+        margin: 0;
+    }
+}
+</style>

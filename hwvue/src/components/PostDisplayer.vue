@@ -1,6 +1,5 @@
 <template>
     <section>
-        <h1>Siia teeme postitused!</h1>
         <div class="post" v-for="post in postsList" :key="post.id">
             <div class="postinfo">
                 <div class="poster-logo">
@@ -15,7 +14,8 @@
             </div>
             
             <div class="post-likes">
-                <img src="../assets/likelogo.png" alt="Like">
+                <button v-on:click="IncreaseLikes(post.id)"><img src="../assets/likelogo.png" alt="Like"></button> 
+                <p>{{post.likes}} likes</p>
             </div>
         </div>
     </section>
@@ -29,8 +29,16 @@ export default{
         postsList() {
             return this.$store.state.postsList
         }
+    },
+    methods: {
+    IncreaseLikes(id) {
+        //console.log(id)
+        this.$store.dispatch("IncreaseLikeAct", {id})
     }
 }
+}
+
+
 </script>
 
 <style>
