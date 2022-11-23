@@ -1,11 +1,12 @@
 <template>
-  <header-component></header-component>
+  
   <!--
   <nav>
     <router-link to="/">Home</router-link> |
     <router-link to="/signup">Sign Up</router-link>
   </nav>
   -->
+  <header-component></header-component>
   <router-view/>
   <footer-component></footer-component>
 </template>
@@ -24,7 +25,19 @@ export default {
 </script>
 
 <style>
+body {
+  min-height: 100vh;
+  margin: 0;
+}
+
 #app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 100%;
+
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
