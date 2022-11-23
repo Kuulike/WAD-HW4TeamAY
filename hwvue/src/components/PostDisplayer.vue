@@ -4,10 +4,9 @@
             <div class="postinfo">
                 <div class="poster-logo">
                     <p> {{post.timestamp}} </p>
-                    <img src={{post.me}} alt="Profile Picture">
+                    <img src={{post.me}}>
                 </div>
             </div>
-        
             <div class="post-text"> {{post.body}} </div>
             <div class="post-picture">
                 <img src={{post.postPicture}}>
