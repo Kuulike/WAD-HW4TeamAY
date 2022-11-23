@@ -1,14 +1,13 @@
 <template>
-  <div class="home">
-  </div>
+    <div class="home">
+    </div>
 
 
-  <div id="content">
-  <aside class="sidebar"><div></div></aside>
-  <PostDisplayer></PostDisplayer>
-  <aside class="sidebar"><div></div></aside>
-  </div>
-  <button v-on:click="ResetLikes">RESET</button>
+    <div id="content">
+    <aside class="sidebar"><div></div></aside>
+    <PostDisplayer></PostDisplayer>
+    <aside class="sidebar"><div></div></aside>
+    </div>
 </template>
 
 <script>
@@ -68,31 +67,7 @@ export default {
     padding: 3px 3px 3px 3px;
 }
 
-.post-date {
-    align-content: right;
-}
 
-.post-picture img{
-    max-width: 350;
-    margin: 0px 0px 0px 20px;
-}
-
-.poster-logo img{
-    width: 35px;
-    height:35px;
-}
-
-.post-likes img{
-    width: 20px;
-    height:20px;
-}
-
-
-.post div+p{
-    font-size: 18px;
-    max-width: 350;
-    margin: 10px 10px 10px 10px;
-}
 
 #content {
     display: flex;
@@ -121,34 +96,12 @@ export default {
     min-height: 300px;
 }
 
-.body-text {
-    margin-right: 150px;
-    font-size: 18px;
-}
 
-.footer {
-    padding-top: .5em;
-    padding-bottom: .5em;
-    background-color: aqua;
-    border-radius: .5em;
-    position: sticky; bottom: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-}
 
 @media (max-width: 770px) {
     .sidebar {
         display: none;
     }
 
-    .post-picture{
-        align-self: center;
-    }
-
-    .post-picture img{
-        margin: 0;
-    }
 }
 </style>
