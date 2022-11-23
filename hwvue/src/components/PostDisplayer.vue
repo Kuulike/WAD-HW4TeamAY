@@ -4,19 +4,20 @@
             <div class="postinfo">
                 <div class="poster-logo">
                     <img :src="post.me" alt="Profile Picture">
-                    <div class="post-date">{{post.timestamp}}</div>
                 </div>
+                <div class="post-date">{{post.timestamp}}</div>
             </div>
         
             <div class="post-text"> {{post.body}} </div>
             <div class="post-picture">
                 <img :src="post.postPicture">
             </div>
-            
+        <div class="likes-info">    
             <div class="post-likes">
                 <button v-on:click="IncreaseLikes(post.id)"><img src="../assets/likelogo.png" alt="Like"></button> 
-                <p>{{post.likes}} likes</p>
             </div>
+            <div>{{post.likes}} likes</div>
+        </div>
         </div>
     </section>
 </template>
@@ -47,11 +48,27 @@ export default{
     flex-direction: row;
     justify-content: space-between;
     flex-flow: row wrap;
+
 }
 
-.postinfo div~p{
+.postinfo {
+    font-size: 18px;
     color: rgb(110, 33, 33);
 }
+
+.likes-info {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.likes-info {
+    font-size: 18px;
+    color: rgb(76, 98, 197);
+}
+
+
 
 .post {
     display: flex;
@@ -78,7 +95,7 @@ export default{
 
 .post-text {
     margin-right: 150px;
-    font-size: 18px;
+    font-size: 24px;
     text-align: left;
 }
 
@@ -94,6 +111,7 @@ export default{
 .poster-logo img{
     width: 35px;
     height:35px;
+
 }
 
 .post-likes img{
@@ -109,10 +127,6 @@ export default{
 }
 
 
-
-
-
-
 .post-date {
     align-content: right;
 }
@@ -120,11 +134,6 @@ export default{
 .post-picture img{
     max-width: 350;
     margin: 0px 0px 0px 20px;
-}
-
-.poster-logo img{
-    width: 35px;
-    height:35px;
 }
 
 .post-likes img{
