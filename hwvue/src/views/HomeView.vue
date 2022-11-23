@@ -19,18 +19,9 @@ export default {
   components: {
     PostDisplayer
     
-  },
-
-  data: function() {
-    return {}
-  },
-  methods: {
-    ResetLikes: function() {
-    this.$store.dispatch("ResetLikeAct")
-    }
+  }
 }
 
-}
 </script>
 
 <style scoped>
