@@ -3,15 +3,14 @@
         <div class="post" v-for="post in postsList" :key="post.id">
             <div class="postinfo">
                 <div class="poster-logo">
-                    <img src={{post.me}} alt="Profile Picture">
+                    <img :src="post.me" alt="Profile Picture">
                     <div class="post-date">{{post.timestamp}}</div>
-                
                 </div>
             </div>
         
             <div class="post-text"> {{post.body}} </div>
             <div class="post-picture">
-                <img src={{post.postPicture}}>
+                <img :src="post.postPicture">
             </div>
             
             <div class="post-likes">

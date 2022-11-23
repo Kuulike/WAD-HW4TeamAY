@@ -25,4 +25,8 @@ export default{
     background-color: aqua;
     border-radius: .5em;
 }
+
+.footer p {
+    margin: 10px;
+}
 </style>

@@ -71,7 +71,7 @@ postsList:
         timestamp: "Sept 23, 2022",           
         me:"../assets/me.png",    
         body: "Ülenurmes avati täna Tartu Smart Bike Share parkla.",
-        postPicture:"../assets/ylenurmerattaparkla.jpg",
+        postPicture:"../assets/ylenumrerattaparkla.jpg",
         likes: 0
         
     },
