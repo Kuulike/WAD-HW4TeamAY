@@ -60,7 +60,7 @@ export default{
 }
 
 .postinfo {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(110, 33, 33);
 }
 
@@ -72,7 +72,7 @@ export default{
 }
 
 .likes-info {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(76, 98, 197);
 }
 
@@ -101,7 +101,7 @@ export default{
 
 .post-text {
     margin-right: 150px;
-    font-size: 24px;
+    font-size: 18px;
     text-align: left;
 }
 
@@ -130,6 +130,11 @@ export default{
 
 .post-date {
     align-content: right;
+}
+
+.post-picture {
+    display: flex;
+    align-items: left;
 }
 
 .post-picture img{
