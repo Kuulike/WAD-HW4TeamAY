@@ -11,7 +11,15 @@
             </div>
             <div class="logininput">
                 <label for="password">Password: </label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
+                <input type="password" id="password" name="password" placeholder="Password" 
+                pattern="^(?=^[A-Z])(?=.*[A-Z])(?=.{2,}[a-z])(?=.*\d)(?=.*[_]).{8,15}$"
+                title="Password must follow the following rules: 
+                        Length is between 8-15 characters.   
+                        Starts with an uppercase letter.       
+                        Includes at least one uppercase letter. 
+                        Includes at least two lowercase letters. 
+                        Includes the '_' character."
+                required>
             </div>
             
             <button type="submit" formaction="#/" id="loginbutton">Sign Up!</button>
