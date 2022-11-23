@@ -12,14 +12,17 @@
             <div class="post-picture">
                 <img :src="post.postPicture">
             </div>
-        <div class="likes-info">    
-            <div class="post-likes">
-                <button v-on:click="IncreaseLikes(post.id)"><img src="../assets/likelogo.png" alt="Like"></button> 
+            
+            <div class="likes-info">    
+                <div class="post-likes">
+                    <button v-on:click="IncreaseLikes(post.id)"><img src="../assets/likelogo.png" alt="Like"></button> 
+                </div>
+                <div>{{post.likes}} likes</div>
             </div>
-            <div>{{post.likes}} likes</div>
         </div>
-        </div>
+        <button id="resetbutton" v-on:click="ResetLikes">RESET</button>
     </section>
+    
 </template>
 
 <script>
@@ -157,6 +160,19 @@ export default{
     .post-picture img{
         margin: 0;
     }
+}
+
+#resetbutton{
+    padding: 10px 15px; 	
+    margin: 3px 0px 10px 0px;			
+    border: none;
+    border-radius: 6px; 		
+    color: #ffffff; 			
+    background-color: #0463b9;
+}
+
+#resetbutton:hover {                 
+	background-color: #034784;
 }
 
 </style>
