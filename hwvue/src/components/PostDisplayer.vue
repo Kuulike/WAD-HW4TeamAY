@@ -5,7 +5,7 @@
             <div class="postinfo">
                 <div class="poster-logo">
                     <p> {{post.timestamp}} </p>
-                    <img src={{post.me}}>
+                    <img src={{post.me}} alt="Profile Picture">
                 </div>
             </div>
         
@@ -15,7 +15,7 @@
             </div>
             
             <div class="post-likes">
-                <img src={{post.like}}>
+                <img src="../assets/likelogo.png" alt="Like">
             </div>
         </div>
     </section>
