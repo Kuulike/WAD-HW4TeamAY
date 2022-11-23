@@ -76,8 +76,6 @@ export default{
     color: rgb(76, 98, 197);
 }
 
-
-
 .post {
     display: flex;
     flex-direction: column;
@@ -111,11 +109,6 @@ export default{
     align-content: right;
 }
 
-.post-picture img{
-    max-width: 500px;
-    margin: 0px 0px 0px 0px;
-}
-
 .poster-logo img{
     width: 35px;
     height:35px;
@@ -140,7 +133,7 @@ export default{
 }
 
 .post-picture img{
-    max-width: 350;
+    max-width: 350px;
     margin: 0px 0px 0px 20px;
 }
 
