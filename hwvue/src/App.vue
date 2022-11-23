@@ -1,10 +1,27 @@
 <template>
+  <header-component></header-component>
+  <!--
   <nav>
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/signup">Sign Up</router-link>
   </nav>
+  -->
   <router-view/>
+  <footer-component></footer-component>
 </template>
+
+<script>
+import HeaderComponent from "@/components/HeaderComponent.vue";
+import FooterComponent from "@/components/FooterComponent.vue";
+export default {
+    name: "SignUpView",
+    components: {
+        HeaderComponent,
+        FooterComponent
+    }
+}
+
+</script>
 
 <style>
 #app {
