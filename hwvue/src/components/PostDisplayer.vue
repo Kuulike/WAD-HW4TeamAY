@@ -15,7 +15,7 @@
             </div>
             
             <div class="post-likes">
-                <img src="../assets/likelogo.png" alt="Like">
+                <img src="../assets/likelogo.png" alt="Like">                
             </div>
         </div>
     </section>
