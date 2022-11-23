@@ -102,13 +102,12 @@ getters: {
 mutations: {
     ResetLikes: (state) => {
         state.postsList.forEach(post => {
-            post.likes =0;
+            post.likes = 0
         })
         },
-    IncreaseLikes: (state) =>{
-            state.postsList.forEach (post=> {
-                post.likes++;
-            })
+    IncreaseLikes: (state, payload) =>{
+            const item = state.postsList.find(item => item.id === payload);
+            item.id++
         }    
     },
 actions: {
@@ -117,9 +116,9 @@ actions: {
                 act.commit("ResetLikes")
             }, 10)
         },
-        IncreaseLikeAct: act => {
+        IncreaseLikeAct: (act, payload) => {
             setTimeout(function() {
-                act.commit("IncreaseLikes")
+                act.commit("IncreaseLikes", payload)
             }, 10)
         }
 },

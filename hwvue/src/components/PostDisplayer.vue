@@ -14,7 +14,7 @@
             </div>
             
             <div class="post-likes">
-                <button v-on:click="IncreaseLikes"><img src="../assets/likelogo.png" alt="Like"></button> 
+                <button v-on:click="IncreaseLikes(key)"><img src="../assets/likelogo.png" alt="Like"></button> 
                 <p>{{post.likes}} likes</p>
             </div>
         </div>
@@ -31,8 +31,8 @@ export default{
         }
     },
     methods: {
-    IncreaseLikes: function() {
-    this.$store.dispatch("IncreaseLikeAct")
+    IncreaseLikes(id) {
+    this.$store.dispatch("IncreaseLikeAct", id)
     }
 }
 }

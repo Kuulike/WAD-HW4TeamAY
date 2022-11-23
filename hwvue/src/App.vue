@@ -26,7 +26,6 @@ export default {
 
 <style>
 body {
-  min-height: 100vh;
   margin: 0;
 }
 
@@ -35,8 +34,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-
-  height: 100%;
+  min-height: 100vh;
 
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
