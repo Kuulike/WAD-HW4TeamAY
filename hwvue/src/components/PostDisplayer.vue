@@ -12,7 +12,7 @@
             <div class="post-picture">
                 <img :src="post.postPicture">
             </div>
-            
+
             <div class="likes-info">    
                 <div class="post-likes">
                     <button v-on:click="IncreaseLikes(post.id)"><img src="../assets/likelogo.png" alt="Like"></button> 
@@ -34,12 +34,17 @@ export default{
             return this.$store.state.postsList
         }
     },
+
     methods: {
-    IncreaseLikes(id) {
-        //console.log(id)
-        this.$store.dispatch("IncreaseLikeAct", {id})
+        IncreaseLikes(id) {
+            //console.log(id)
+            this.$store.dispatch("IncreaseLikeAct", {id})
+        },
+    
+        ResetLikes: function() {
+        this.$store.dispatch("ResetLikeAct")
+        }
     }
-}
 }
 
 
