@@ -60,7 +60,7 @@ export default{
 }
 
 .postinfo {
-    font-size: 18px;
+    font-size: 16px;
     color: rgb(110, 33, 33);
 }
 
@@ -103,7 +103,7 @@ export default{
 
 .post-text {
     margin-right: 150px;
-    font-size: 24px;
+    font-size: 18px;
     text-align: left;
 }
 
@@ -111,10 +111,18 @@ export default{
     align-content: right;
 }
 
+.post-picture {
+    max-width: 500px;
+    margin: 0px 0px 0px 0px;
+    align-content: left;
+}
+
 .post-picture img{
     max-width: 500px;
     margin: 0px 0px 0px 0px;
+ 
 }
+
 
 .poster-logo img{
     width: 35px;
@@ -129,7 +137,7 @@ export default{
 
 
 .post div+p{
-    font-size: 18px;
+    font-size: 16px;
     max-width: 350;
     margin: 10px 10px 10px 10px;
 }
@@ -139,10 +147,6 @@ export default{
     align-content: right;
 }
 
-.post-picture img{
-    max-width: 350;
-    margin: 0px 0px 0px 20px;
-}
 
 .post-likes img{
     width: 20px;
@@ -155,6 +159,9 @@ export default{
     max-width: 350;
     margin: 10px 10px 10px 10px;
 }
+
+
+
 
 @media (max-width: 770px) {
 

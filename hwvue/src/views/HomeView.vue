@@ -25,40 +25,6 @@ export default {
 </script>
 
 <style scoped>
-.postinfo {
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-flow: row wrap;
-}
-
-.postinfo div~p{
-    color: rgb(110, 33, 33);
-}
-
-.post {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: rgb(243, 243, 225);
-    height: auto;
-    border-radius: .5em;
-    margin: 20px 0px 20px 1px;
-    align-content: left;
-    align-items: stretch;    
-}
-
-.post div, .post p{
-    margin: 10px 10px 10px 10px;
-}
-
-.post-text {
-    inline-size: 90%;
-    overflow-wrap: break-word;
-    padding: 3px 3px 3px 3px;
-}
-
-
 
 #content {
     display: flex;
