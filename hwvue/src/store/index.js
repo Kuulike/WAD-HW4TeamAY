@@ -11,7 +11,7 @@ postsList:
         me:"../assets/me.png",
         body: "Tartu keskse väljaku, Suurturu arhitektuuri tähtsamateks ehitisteks saidki uus raekoda väljaku laiemas ja perspektiivi lõpetav Kivisild väljaku kitsamas osas.",
         postPicture:"",
-        likes1: 0
+        likes: 0
     
     },
     {
@@ -106,8 +106,9 @@ mutations: {
         })
         },
     IncreaseLikes: (state, payload) =>{
-            const item = state.postsList.find(item => item.id === payload);
-            item.id++
+            //console.log(payload)
+            const item = state.postsList.find(item => item.id === payload.id);
+            item.likes++
         }    
     },
 actions: {
@@ -117,6 +118,7 @@ actions: {
             }, 10)
         },
         IncreaseLikeAct: (act, payload) => {
+            //console.log(payload)
             setTimeout(function() {
                 act.commit("IncreaseLikes", payload)
             }, 10)
