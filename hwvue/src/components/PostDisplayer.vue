@@ -24,9 +24,12 @@
 <script>
 export default{
     name: "PostDisplayer",
-    props: ["postsList"],
     data: function() {return{}},
-    computed: {}
+    computed: {
+        postsList() {
+            return this.$store.state.postsList
+        }
+    }
 }
 </script>
 
