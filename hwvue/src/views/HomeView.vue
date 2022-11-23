@@ -1,8 +1,8 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
   </div>
   <PostDisplayer></PostDisplayer>
+  <button v-on:click="IncreaseLikes">Like</button>
 </template>
 
 <script>
@@ -18,6 +18,12 @@ export default {
 
   data: function() {
     return {}
+  },
+
+methods: {
+  IncreaseLikes: function() {
+    this.$store.dispatch("IncreaseLikeAct")
   }
+}
 }
 </script>
