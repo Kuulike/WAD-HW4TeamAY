@@ -1,5 +1,7 @@
 <template>
-    <footer class="footer"> </footer>
+    <footer class="footer"> 
+        <p> TEAM AY. Tanel Tark, Priit Rooden, Janely Adams </p>
+    </footer>
 </template>
 
 <script>
