@@ -2,7 +2,7 @@
   <div class="home">
   </div>
   <PostDisplayer></PostDisplayer>
-  <button v-on:click="IncreaseLikes">Like</button>
+  <button v-on:click="ResetLikes">RESET</button>
 </template>
 
 <script>
@@ -12,18 +12,18 @@ import PostDisplayer from "@/components/PostDisplayer.vue";
 export default {
   name: 'HomeView',
   components: {
-    PostDisplayer,
+    PostDisplayer
     
   },
 
   data: function() {
     return {}
   },
-
-methods: {
-  IncreaseLikes: function() {
-    this.$store.dispatch("IncreaseLikeAct")
-  }
+  methods: {
+    ResetLikes: function() {
+    this.$store.dispatch("ResetLikeAct")
+    }
 }
+
 }
 </script>
