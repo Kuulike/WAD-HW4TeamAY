@@ -11,7 +11,7 @@ postsList:
         me:"../assets/me.png",
         body: "Tartu keskse väljaku, Suurturu arhitektuuri tähtsamateks ehitisteks saidki uus raekoda väljaku laiemas ja perspektiivi lõpetav Kivisild väljaku kitsamas osas.",
         postPicture:"",
-        likes: 0
+        likes1: 0
     
     },
     {

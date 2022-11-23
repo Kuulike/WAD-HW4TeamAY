@@ -1,7 +1,13 @@
 <template>
   <div class="home">
   </div>
+
+
+  <div id="content">
+  <aside class="sidebar"><div></div></aside>
   <PostDisplayer></PostDisplayer>
+  <aside class="sidebar"><div></div></aside>
+  </div>
   <button v-on:click="ResetLikes">RESET</button>
 </template>
 
