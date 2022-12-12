@@ -1,49 +1,33 @@
 <template>
-    <section>
-        <div class="post" v-for="post in postsList" :key="post.id">
-            <div class="postinfo">
-                <div class="poster-logo">
-                    <img :src="post.me" alt="Profile Picture">
+    <div class ="AllPosts">
+        <div id = "post-list">
+            <h1>All Posts</h1>
+            <section>
+            <ul>
+                <div class="post" v-for="post in postsList" :key="post.id">
+                    <Post :post="post"></Post> 
                 </div>
-                <div class="post-date">{{post.timestamp}}</div>
-            </div>
-        
-            <div class="post-text"> {{post.body}} </div>
-            <div class="post-picture">
-                <img :src="post.postPicture">
-            </div>
-
-            <div class="likes-info">    
-                <div class="post-likes">
-                    <button v-on:click="IncreaseLikes(post.id)"><img src="../assets/likelogo.png" alt="Like"></button> 
-                </div>
-                <div>{{post.likes}} likes</div>
-            </div>
+            </ul>
+            <button id="resetbutton" v-on:click="ResetLikes">RESET</button>
+            </section>
         </div>
-        <button id="resetbutton" v-on:click="ResetLikes">RESET</button>
-    </section>
-    
+    </div>    
 </template>
 
+
 <script>
+import Post from "@/components/Post.vue";
 export default{
     name: "PostDisplayer",
+    
     data: function() {return{}},
     computed: {
         postsList() {
             return this.$store.state.postsList
         }
     },
-
-    methods: {
-        IncreaseLikes(id) {
-            //console.log(id)
-            this.$store.dispatch("IncreaseLikeAct", {id})
-        },
-    
-        ResetLikes: function() {
-        this.$store.dispatch("ResetLikeAct")
-        }
+    components: {
+        Post
     }
 }
 

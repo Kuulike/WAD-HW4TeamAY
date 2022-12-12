@@ -1,4 +1,5 @@
 <template>
+    <div class = "homeView">
     <div class="home">
     </div>
 
@@ -7,6 +8,7 @@
     <aside class="sidebar"><div></div></aside>
     <PostDisplayer></PostDisplayer>
     <aside class="sidebar"><div></div></aside>
+    </div>
     </div>
 </template>
 

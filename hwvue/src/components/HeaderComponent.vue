@@ -4,6 +4,8 @@
             <li class="navoption"><a href="#/signup"><strong>Sign Up</strong></a></li>
             <li>|</li>
             <li class="navoption"><a href="#/"><strong>Home</strong></a></li>
+            <li>|</li>
+            <li class="navoption"><a href="#/contactus"><strong>Contact us</strong></a></li>
         </ul>
     </header>
 </template>
