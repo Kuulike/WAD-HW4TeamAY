@@ -32,7 +32,7 @@ cd .\hwvue\
 npm run serve
 ```
 ### Back-end
-Make sure the database credentials are correct in the 'database.js' file. Navigate to the front-end project directory and run the app.
+Make sure the database credentials are correct in the 'database.js' file. Navigate to the back-end project directory and run the app.
 ```
 cd .\backend\
 npm start
