@@ -33,7 +33,7 @@ const createPostTblQuery = `
 // A function to execute the previous query   
 execute(createPostTblQuery).then(result => {
     if (result) {
-        console.log('If does not exists, create the "posttable" table');
+        console.log('Created the "posttable" table if it did not exist already.');
     }
 });
 
@@ -51,7 +51,7 @@ const createUserTblQuery = `
 
 execute(createUserTblQuery).then(result => {
     if (result) {
-        console.log('Table "users" is created');
+        console.log('Created the "users" table if it did not exist already.');
     }
 });
 
