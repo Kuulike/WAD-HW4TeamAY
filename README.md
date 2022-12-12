@@ -1,4 +1,4 @@
-# WAD2022-HWVueTeamAY
+# WAD2022-HW4TeamAY
 Repository for homework submission in the Web Application Development course.
 
 Team identifier: AY Group number: 6
@@ -9,9 +9,33 @@ Link to repository: https://github.com/Kuulike/WAD2022-HW4FrontEndTeamAY
 
 
 ## Project setup
-To set up and run the front-end navigate to the directory 'hwvue' and follow the instructions in the README.md in that folder.
-
-## Navigate to the project directory
+### Front-end
+To set up and run the front-end navigate to the directory 'hwvue' and install the necessary dependencies.
 ```
 cd .\hwvue\
+npm install
 ```
+### Back-end
+To set up and run the back-end navigate to the directory 'backend' and install the necessary dependencies.
+```
+cd .\backend\
+npm install
+```
+The backend also needs an existing database and access credentials to function. By default the used database is named 'testWad'.
+Edit the 'database.js' file to have the right credentials to access the database by inserting the correct password.
+
+## Running the project
+### Front-end
+Make sure the back-end is up and running. Navigate to the front-end project directory and run the app.
+```
+cd .\hwvue\
+npm run serve
+```
+### Back-end
+Make sure the database credentials are correct in the 'database.js' file. Navigate to the front-end project directory and run the app.
+```
+cd .\backend\
+npm start
+```
+
+
