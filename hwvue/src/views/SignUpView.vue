@@ -7,11 +7,14 @@
         <form class="loginform" id="loginform">
             <div class="logininput">
                 <label for="email">Email: </label>
-                <input type="email" id="email" name="email" placeholder="E-mail" required>
+                <!--<input type="email" id="email" name="email" placeholder="E-mail" required v-model="email">-->
+                <input type="email" id="email" name="email" v-model="email">
             </div>
             <div class="logininput">
                 <label for="password">Password: </label>
-                <input type="text" id="password" name="password" placeholder="Password" 
+                
+                <!--<input type="text" id="password" name="password" placeholder="Password" v-model="password"-->
+                <input type="password" id="password" name="password"  placeholder="Password" 
                 pattern="^(?=^[A-Z])(?=.*[A-Z])(?=.*[a-z]{2,})(?=.*\d)(?=.*[_]).{8,15}$"
                 title="Password must follow the following rules: 
                         Length is between 8-15 characters.   
@@ -20,7 +23,7 @@
                         Includes at least one number.  
                         Includes at least two lowercase letters.
                         Includes the '_' character."
-                required>
+                required v-model="password">
             </div>
             
             <button type="submit" formaction="#/" id="loginbutton">Sign Up!</button>
@@ -33,10 +36,46 @@
 <script>
 export default {
     name: "SignUpView",
-    components: {
-        
-    }
+data: function() {
+    return {
+    email: '',
+    password: '',
 }
+},
+watch: {
+    password(value) {
+    this.password = value;
+    }
+},
+methods:{
+    SignUp() {
+        var data = {
+        email: this.email,
+        password: this.password
+        };
+        fetch("http://localhost:3000/auth/signup", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+            credentials: 'include', 
+            body: JSON.stringify(data),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data);
+    this.$router.push("/");
+    })
+    .catch((e) => {
+        console.log(e);
+        console.log("error");
+    });
+    },
+    }, 
+}
+
+
+
 
 </script>
 

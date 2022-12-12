@@ -15,11 +15,11 @@
 import PostDisplayer from "@/components/PostDisplayer.vue";
 
 export default {
-  name: 'HomeView',
-  components: {
+    name: 'HomeView',
+    components: {
     PostDisplayer
     
-  }
+    }
 }
 
 </script>
