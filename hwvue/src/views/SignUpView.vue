@@ -34,13 +34,19 @@
 </template>
 
 <script>
+
+
+
 export default {
     name: "SignUpView",
-data: function() {
-    return {
-    email: '',
-    password: '',
-}
+    components: {
+
+    },
+    data: function() {
+        return {
+        email: '',
+        password: '',
+    }
 },
 watch: {
     password(value) {
