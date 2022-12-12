@@ -11,6 +11,7 @@ Link to repository: https://github.com/Kuulike/WAD2022-HW4FrontEndTeamAY
 ## Project setup
 To set up and run the front-end navigate to the directory 'hwvue' and follow the instructions in the README.md in that folder.
 
+## Navigate to the project directory
 ```
 cd .\hwvue\
 ```
