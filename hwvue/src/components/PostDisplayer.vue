@@ -37,7 +37,7 @@ export default{
     return {
     posts:[ ]
     }
-},
+    },
     computed: {
         
     },
@@ -78,11 +78,10 @@ methods: {
                 console.log("error");
             });
     },
-}
 
-    }
-,
-methods: {
+
+    
+
 LogOut() {
     var data = {
         email: this.email,
@@ -107,7 +106,7 @@ LogOut() {
     });
     }
 }
-}
+
 </script>
 
 
