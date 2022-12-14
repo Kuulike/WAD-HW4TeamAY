@@ -3,7 +3,6 @@
     <div class="home">
     </div>
 
-
     <div id="content">
     <aside class="sidebar"><div></div></aside>
     <PostDisplayer></PostDisplayer>
@@ -19,9 +18,12 @@ import PostDisplayer from "@/components/PostDisplayer.vue";
 export default {
     name: 'HomeView',
     components: {
-    PostDisplayer
+        PostDisplayer
+    },
     
-    }
+    methods: {
+}
+
 }
 
 </script>
