@@ -11,8 +11,10 @@
                 </div>
             </ul>
 
-            <button @click='this.$router.push("/addpost")' class="addPostButton">Add Post</button>
-            <button class="deleteAllButton">Delete All</button>
+            <div class = "contentChangeButtons">
+                <button @click='this.$router.push("/addpost")' class="addPostButton">Add Post</button>
+                <button class="deleteAllButton">Delete All</button>
+            </div> 
             </section>
         </div>
     </div>    
@@ -153,17 +155,13 @@ export default{
     }
 }
 
-#resetbutton{
+.AllPosts button {
     padding: 10px 15px; 	
-    margin: 3px 0px 10px 0px;			
-    border: none;
-    border-radius: 6px; 		
-    color: #ffffff; 			
-    background-color: #0463b9;
-}
-
-#resetbutton:hover {                 
-	background-color: #034784;
-}
+        margin: 3px 20px 10px 20px;			
+        border: none;
+        border-radius: 6px; 		
+        color: #ffffff; 			
+        background-color: #0463b9; 
+  }
 
 </style>

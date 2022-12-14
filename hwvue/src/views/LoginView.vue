@@ -24,9 +24,9 @@
                 </div>
                 <div class="container">
                 
-                    <button @click="LogIn"  class="center">LogIn</button>
+                    <button @click="LogIn"  class="choiceButtons">Log In</button>
                     <p> or </p>
-                    <button @click='this.$router.push("/signup")' class="center">Signup</button>
+                    <button @click='this.$router.push("/signup")' class="choiceButtons">Sign Up</button>
                 
                 </div>
                 <!--<button type="submit" formaction="#/" id="loginbutton">Login!</button>-->
@@ -51,7 +51,7 @@ LogIn() {
         email: this.email,
         password: this.password
     };
-    fetch("http://localhost:3000/auth/authenticate", {
+    fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: {
         "Content-Type": "application/json",
@@ -73,3 +73,21 @@ LogIn() {
     }
     
     </script>
+
+ <style>
+.choiceButtons {
+    padding: 10px 15px; 	
+        margin: 3px 20px 10px 20px;			
+        border: none;
+        border-radius: 6px; 		
+        color: #ffffff; 			
+        background-color: #0463b9; 
+  }
+ .choiceButtons:hover {                 
+        background-color: #034784;
+    }
+  .container {
+    display: flex;
+    justify-content: center;
+  }
+  </style>
