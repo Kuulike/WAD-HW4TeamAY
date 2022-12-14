@@ -48,7 +48,7 @@ const router = createRouter({
 
 router.beforeEach(async(to, from) => {
   let authResult = await auth.authenticated().then();
-  if(!authResult && (to.name == 'home' || to.name == 'addpost')) {
+  if(!authResult && (to.name == 'home' || to.name == 'addpost' || to.name == 'apost')) {
     return '/login';
   }
 })
