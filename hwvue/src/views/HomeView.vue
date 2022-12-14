@@ -20,8 +20,21 @@ export default {
     components: {
         PostDisplayer
     },
-    
-    methods: {
+  
+}
+
+</script>
+
+<style scoped>
+.postinfo {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.postinfo div~p{
+    color: rgb(110, 33, 33);
 }
 
 }

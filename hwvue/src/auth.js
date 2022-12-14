@@ -7,7 +7,7 @@ export default {
             .then((response) => response.json())
             .then((data) => {
                 this.user.authenticated = data.authenticated;
-                console.log(data);
+                //console.log(data);
             })
             .catch((e) => {
                 console.log(e);
