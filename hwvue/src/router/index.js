@@ -5,6 +5,7 @@ import ContactUsView from '../views/ContactUsView.vue'
 import LoginView from '../views/LoginView.vue'
 import AddPostView from '../views/AddPostView.vue'
 import APostView from '../views/APostView.vue'
+import auth from '../auth'
 
 const routes = [
   {
@@ -43,6 +44,13 @@ const routes = [
 const router = createRouter({
   history: createWebHashHistory(),
   routes
+})
+
+router.beforeEach(async(to, from) => {
+  let authResult = await auth.authenticated().then();
+  if(!authResult && (to.name == 'home' || to.name == 'addpost')) {
+    return '/login';
+  }
 })
 
 export default router

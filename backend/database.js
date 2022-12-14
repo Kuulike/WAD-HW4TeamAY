@@ -2,10 +2,10 @@
 const Pool = require('pg').Pool;
 const pool = new Pool({
     user: "postgres",
-    password: "Andmebaas",
+    password: "Punnsilm",
     database: "testWad",
     host: "localhost",
-    port: "5433"
+    port: "5432"
 });
 
 const execute = async(query) => {
