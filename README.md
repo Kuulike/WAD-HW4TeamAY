@@ -5,7 +5,7 @@ Team identifier: AY Group number: 6
 
 Team members: Priit Rooden 93328, Tanel Tark C08132, Janely Adams B90082
 
-Link to repository: https://github.com/Kuulike/WAD2022-HW4FrontEndTeamAY
+Link to repository: https://github.com/Kuulike/WAD2022-HW4TeamAY
 
 
 ## Project setup
@@ -22,7 +22,7 @@ cd .\backend\
 npm install
 ```
 The backend also needs an existing database and access credentials to function. By default the used database is named 'testWad'.
-Edit the 'database.js' file to have the right credentials to access the database by inserting the correct password.
+Edit the 'database.js' file to have the right credentials to access the database by inserting the correct password and port number.
 
 ## Running the project
 ### Front-end
@@ -32,7 +32,7 @@ cd .\hwvue\
 npm run serve
 ```
 ### Back-end
-Make sure the database credentials are correct in the 'database.js' file. Navigate to the back-end project directory and run the app.
+Make sure the database credentials are correct in the 'database.js' file. Navigate to the back-end project directory and run the app. 
 ```
 cd .\backend\
 npm start
