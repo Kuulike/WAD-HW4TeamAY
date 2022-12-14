@@ -1,4 +1,4 @@
-# WAD2022-HW4TeamAY
+# WAD-HW4TeamAY
 Repository for homework submission in the Web Application Development course.
 
 Team identifier: AY Group number: 6
