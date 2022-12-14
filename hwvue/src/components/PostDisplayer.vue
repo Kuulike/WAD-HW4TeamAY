@@ -37,7 +37,7 @@ export default{
     return {
     posts:[ ]
     }
-},
+    },
     computed: {
         
     },
@@ -61,8 +61,6 @@ export default{
                 console.log("error");
             });
     },
-    }
-,
 methods: {
 LogOut() {
     var data = {

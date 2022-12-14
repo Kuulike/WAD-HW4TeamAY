@@ -37,12 +37,6 @@ export default {
     color: rgb(110, 33, 33);
 }
 
-}
-
-</script>
-
-<style scoped>
-
 #content {
     display: flex;
     flex-direction: row;
