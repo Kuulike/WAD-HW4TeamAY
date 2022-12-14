@@ -1,12 +1,15 @@
+
+
 <template>
     <div class ="AllPosts">
         <div id = "post-list">
+
             <button @click='LogOut' class="logOutButton">Log Out</button>                   
             
             <h1>All Posts</h1>
             <section>
             <ul>
-                <div class="post" v-for="post in postsList" :key="post.id">
+                <div class="post" v-for="post in posts" :key="post.id">
                     <Post :post="post"></Post> 
                 </div>
             </ul>
@@ -20,20 +23,44 @@
     </div>    
 </template>
 
+<script setup>
+import Post from "@/components/Post.vue";
+</script>
 
 <script>
-import Post from "@/components/Post.vue";
+
 export default{
     name: "PostDisplayer",
+    //props:['posts'],
     
-    data: function() {return{}},
+    data: function() {
+    return {
+    posts:[ ]
+    }
+},
     computed: {
-        postsList() {
-            return this.$store.state.postsList
-        }
+        
     },
     components: {
         Post
+    },
+
+    mounted() {
+        fetch("http://localhost:3000/api/posts", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: 'include', //  Don't forget to specify this if you need cookies
+            //body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => this.posts = data)
+            .catch((e) => {
+                console.log(e);
+                console.log("error");
+            });
+    },
     }
 ,
 methods: {
@@ -62,9 +89,9 @@ LogOut() {
     }
 }
 }
-
-
 </script>
+
+
 
 <style>
 .postinfo {
@@ -138,7 +165,7 @@ LogOut() {
 
 
 .post div+p{
-    font-size: 18px;
+    font-size: 16px;
     max-width: 350;
     margin: 10px 10px 10px 10px;
 }
@@ -169,6 +196,9 @@ LogOut() {
     max-width: 350;
     margin: 10px 10px 10px 10px;
 }
+
+
+
 
 @media (max-width: 770px) {
 

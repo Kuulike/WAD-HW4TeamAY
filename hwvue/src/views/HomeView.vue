@@ -3,7 +3,6 @@
     <div class="home">
     </div>
 
-
     <div id="content">
     <aside class="sidebar"><div></div></aside>
     <PostDisplayer></PostDisplayer>
@@ -17,11 +16,10 @@
 import PostDisplayer from "@/components/PostDisplayer.vue";
 
 export default {
-  name: 'HomeView',
-  components: {
-    PostDisplayer
-    
-  }
+    name: 'HomeView',
+    components: {
+        PostDisplayer
+    },
   
 }
 
@@ -39,29 +37,11 @@ export default {
     color: rgb(110, 33, 33);
 }
 
-.post {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    background: rgb(243, 243, 225);
-    height: auto;
-    border-radius: .5em;
-    margin: 20px 0px 20px 1px;
-    align-content: left;
-    align-items: stretch;    
 }
 
-.post div, .post p{
-    margin: 10px 10px 10px 10px;
-}
+</script>
 
-.post-text {
-    inline-size: 90%;
-    overflow-wrap: break-word;
-    padding: 3px 3px 3px 3px;
-}
-
-
+<style scoped>
 
 #content {
     display: flex;
