@@ -107,8 +107,7 @@ app.post('/auth/login', async(req, res) => {
         if (!validPassword) return res.status(401).json({ error: "Incorrect password" });
 
         const token = await generateJWT(user.rows[0].id);
-        res
-            .status(201)
+        res.status(201)
             .cookie('jwt', token, { maxAge: 6000000, httpOnly: true })
             .json({ user_id: user.rows[0].id })
             .send;
@@ -139,7 +138,8 @@ app.use(async (req, res, next) => {
                 if (err) { // not verified, redirect to login page
                     console.log(err.message);
                     console.log('token is not verified');
-                    res.status(400).send(err.message);
+                    this.$router.push("/login");
+                    return res.status(400).send(err.message);;
                 } else { // token exists and it is verified 
                     console.log('author is authenticated');
                     authenticated = true;
@@ -147,7 +147,9 @@ app.use(async (req, res, next) => {
                 }
             })
         } else { //applies when the token does not exist
-            console.log('author is not authenticated');
+            console.log('Token does not exist!');
+            this.$router.push("/login");
+            return res.status(401).json({ error: "User is not registered" });
         }
 	} catch (err) {
 		console.error(err.message);
