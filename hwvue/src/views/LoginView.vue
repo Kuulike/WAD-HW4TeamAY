@@ -51,6 +51,9 @@ LogIn() {
         email: this.email,
         password: this.password
     };
+    if (this.email == '' || this.password == '') {
+        return;
+    }
     fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: {
