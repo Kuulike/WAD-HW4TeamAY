@@ -42,7 +42,7 @@ app.get('/auth/authenticate', async(req, res) => {
                     console.log('token is not verified');
                     res.send({ "authenticated": authenticated }); // authenticated = false
                 } else { // token exists and it is verified 
-                    console.log('author is authinticated');
+                    console.log('author is authenticated');
                     authenticated = true;
                     res.send({ "authenticated": authenticated }); // authenticated = true
                 }
@@ -74,8 +74,7 @@ app.post('/auth/signup', async(req, res) => {
         //console.log(token);
         //res.cookie("isAuthorized", true, { maxAge: 1000 * 60, httpOnly: true });
         //res.cookie('jwt', token, { maxAge: 6000000, httpOnly: true });
-        res
-            .status(201)
+        res.status(201)
             .cookie('jwt', token, { maxAge: 6000000, httpOnly: true })
             .json({ user_id: authUser.rows[0].id })
             .send;
@@ -123,6 +122,41 @@ app.get('/auth/logout', (req, res) => {
     console.log('delete jwt request arrived');
     res.status(202).clearCookie('jwt').json({ "Msg": "cookie cleared" }).send
 });
+
+
+// ... routes with no token checks above
+
+// auth middleware
+app.use(async (req, res, next) => {
+	console.log('authentication middleware');
+    const token = req.cookies.jwt; // assign the token named jwt to the token const
+    //console.log("token " + token);
+    let authenticated = false; // a user is not authenticated until proven the opposite
+	try {
+        if (token) { //checks if the token exists
+            //jwt.verify(token, secretOrPublicKey, [options, callback]) verify a token
+            await jwt.verify(token, secret, (err) => { //token exists, now we try to verify it
+                if (err) { // not verified, redirect to login page
+                    console.log(err.message);
+                    console.log('token is not verified');
+                    res.status(400).send(err.message);
+                } else { // token exists and it is verified 
+                    console.log('author is authenticated');
+                    authenticated = true;
+                    next();
+                }
+            })
+        } else { //applies when the token does not exist
+            console.log('author is not authenticated');
+        }
+	} catch (err) {
+		console.error(err.message);
+		res.status(400).send(err.message);
+	}
+
+});
+
+// routes/middlewares below are always checked for valid token
 
 //"async and await make promises easier to write"
 // async makes a function return a Promise
