@@ -1,7 +1,7 @@
 <template>
     <div class ="AllPosts">
         <div id = "post-list">
-            <button @click='this.$router.push("/login")' class="logOutButton">Log Out</button>                   
+            <button @click='LogOut' class="logOutButton">Log Out</button>                   
             
             <h1>All Posts</h1>
             <section>
@@ -35,6 +35,32 @@ export default{
     components: {
         Post
     }
+,
+methods: {
+LogOut() {
+    var data = {
+        email: this.email,
+        password: this.password
+    };
+    fetch("http://localhost:3000/auth/logout", {
+        method: "GET",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        credentials: 'include', // KOOOKID
+        //body: JSON.stringify(data),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data);
+    location.assign("/login");
+    })
+    .catch((e) => {
+        console.log(e);
+        console.log("error");
+    });
+    }
+}
 }
 
 

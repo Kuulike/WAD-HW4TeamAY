@@ -7,7 +7,7 @@
             <div class="loginform" id="loginform">
                 <div class="logininput">
                     <label for="email">Email: </label>
-                    <input type="email" id="email" name="email" placeholder="E-mail" required>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required v-model="email">
                 </div>
                 <div class="logininput">
                     <label for="password">Password: </label>
@@ -20,7 +20,7 @@
                             Includes at least one number.  
                             Includes at least two lowercase letters.
                             Includes the '_' character."
-                    required>
+                    required v-model="password">
                 </div>
                 <div class="container">
                 
