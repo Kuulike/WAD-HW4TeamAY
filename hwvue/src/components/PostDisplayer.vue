@@ -1,7 +1,7 @@
 <template>
     <div class ="AllPosts">
         <div id = "post-list">
-            <button @click='this.$router.push("/login")' class="logOutButton">Log Out</button>                   
+            <button @click='LogOut' class="logOutButton">Log Out</button>                   
             
             <h1>All Posts</h1>
             <section>
@@ -11,8 +11,10 @@
                 </div>
             </ul>
 
-            <button @click='this.$router.push("/addpost")' class="addPostButton">Add Post</button>
-            <button class="deleteAllButton">Delete All</button>
+            <div class = "contentChangeButtons">
+                <button @click='this.$router.push("/addpost")' class="addPostButton">Add Post</button>
+                <button class="deleteAllButton">Delete All</button>
+            </div> 
             </section>
         </div>
     </div>    
@@ -33,6 +35,32 @@ export default{
     components: {
         Post
     }
+,
+methods: {
+LogOut() {
+    var data = {
+        email: this.email,
+        password: this.password
+    };
+    fetch("http://localhost:3000/auth/logout", {
+        method: "GET",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        credentials: 'include', // KOOOKID
+        //body: JSON.stringify(data),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data);
+    location.assign("/login");
+    })
+    .catch((e) => {
+        console.log(e);
+        console.log("error");
+    });
+    }
+}
 }
 
 
@@ -153,17 +181,13 @@ export default{
     }
 }
 
-#resetbutton{
+.AllPosts button {
     padding: 10px 15px; 	
-    margin: 3px 0px 10px 0px;			
-    border: none;
-    border-radius: 6px; 		
-    color: #ffffff; 			
-    background-color: #0463b9;
-}
-
-#resetbutton:hover {                 
-	background-color: #034784;
-}
+        margin: 3px 20px 10px 20px;			
+        border: none;
+        border-radius: 6px; 		
+        color: #ffffff; 			
+        background-color: #0463b9; 
+  }
 
 </style>
