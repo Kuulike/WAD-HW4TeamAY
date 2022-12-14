@@ -250,6 +250,22 @@ app.delete('/api/posts/:id', async(req, res) => {
 
 
 
+app.delete('/api/posts/', async(req, res) => {
+    try {
+        //const post = req.body; // we do not need a body for a delete request
+        console.log("delete all post request has arrived");
+        const deletepost = await pool.query(
+            "TRUNCATE posttable",
+        );
+        res.json(deletepost);
+    } catch (err) {
+        console.error(err.message);
+    }
+}); 
+
+
+
+
 //``````````````
 app.listen(port, () => {
     console.log("Server is listening to port " + port)

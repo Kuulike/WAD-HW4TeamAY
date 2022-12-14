@@ -61,7 +61,24 @@ export default{
                 console.log("error");
             });
     },
+    
 methods: {
+    Deleteall(){
+    fetch("http://localhost:3000/api/posts", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            credentials: 'include', //  Don't forget to specify this if you need cookies
+            //body: JSON.stringify(data),
+        })
+            .then((response) => response.json())
+            .then((data) => this.posts = data)
+            .catch((e) => {
+                console.log(e);
+                console.log("error");
+            });
+    },
 LogOut() {
     var data = {
         email: this.email,
