@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
-app.use(cors({ origin: 'http://localhost:8081', credentials: true }));
+app.use(cors({ origin: 'http://localhost:8080', credentials: true }));
 // We need to include "credentials: true" to allow cookies to be represented  
 // Also "credentials: 'include'" need to be added in Fetch API in the Vue.js App
 
@@ -29,7 +29,7 @@ const generateJWT = (id) => {
 
   // is used to check whether a user is authenticated
 app.get('/auth/authenticate', async(req, res) => {
-    console.log('authentication request has been arrived');
+    console.log('Navigation authentication has been called.');
     const token = req.cookies.jwt; // assign the token named jwt to the token const
     //console.log("token " + token);
     let authenticated = false; // a user is not authenticated until proven the opposite
@@ -138,8 +138,8 @@ app.use(async (req, res, next) => {
                 if (err) { // not verified, redirect to login page
                     console.log(err.message);
                     console.log('token is not verified');
-                    this.$router.push("/login");
-                    return res.status(400).send(err.message);;
+                    res.status(400).send(err.message);
+                    return;
                 } else { // token exists and it is verified 
                     console.log('author is authenticated');
                     authenticated = true;
@@ -148,8 +148,8 @@ app.use(async (req, res, next) => {
             })
         } else { //applies when the token does not exist
             console.log('Token does not exist!');
-            this.$router.push("/login");
-            return res.status(401).json({ error: "User is not registered" });
+            res.status(401).json({ error: "User is not registered" }).send
+            return;
         }
 	} catch (err) {
 		console.error(err.message);
