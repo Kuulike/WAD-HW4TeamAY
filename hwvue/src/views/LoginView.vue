@@ -23,11 +23,11 @@
                     required>
                 </div>
                 <div class="container">
-                   
+                
                     <button @click="LogIn"  class="center" formaction="#/">LogIn</button>
                     <p> or </p>
                     <button @click='this.$router.push("/signup")' class="center">Signup</button>
-                   
+                
                 </div>
                 <!--<button type="submit" formaction="#/" id="loginbutton">Login!</button>-->
             </form>
