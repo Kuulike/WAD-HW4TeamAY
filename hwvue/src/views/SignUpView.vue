@@ -36,6 +36,7 @@
         components: {
             
         },
+    
         data: function() {
             return  {
                         email: '',
@@ -70,6 +71,7 @@
             },
         }, 
     }
+    
     </script>
     
     <style>
@@ -79,25 +81,31 @@
         flex-direction: column;
         align-items: center;
     }
+    
     .logincontent{
         display: flex;
         flex-direction: column;
         align-items: center;
+    
         max-width: 300px;
         padding: 10px 15px;
         margin: 10px;
         background-color: aqua;
     }
+    
     .loginform{
         display: flex;
         flex-direction: column;
     }
+    
     .logininput {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+    
         margin: 3px;
     }
+    
     #loginbutton{
         padding: 10px 15px; 	
         margin: 3px 0px 10px 0px;			
@@ -106,6 +114,7 @@
         color: #ffffff; 			
         background-color: #0463b9;
     }
+    
     #loginbutton:hover {                 
         background-color: #034784;
     }

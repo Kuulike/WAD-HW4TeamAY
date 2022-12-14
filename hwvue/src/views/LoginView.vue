@@ -4,7 +4,7 @@
         <div class="logincontent">
             <h2>Welcome to PostIT</h2>
     
-            <form class="loginform" id="loginform">
+            <div class="loginform" id="loginform">
                 <div class="logininput">
                     <label for="email">Email: </label>
                     <input type="email" id="email" name="email" placeholder="E-mail" required>
@@ -24,13 +24,13 @@
                 </div>
                 <div class="container">
                 
-                    <button @click="LogIn"  class="center" formaction="#/">LogIn</button>
+                    <button @click="LogIn"  class="center">LogIn</button>
                     <p> or </p>
                     <button @click='this.$router.push("/signup")' class="center">Signup</button>
                 
                 </div>
                 <!--<button type="submit" formaction="#/" id="loginbutton">Login!</button>-->
-            </form>
+            </div>
         </div>
     </section>
     
@@ -39,11 +39,37 @@
     <script>
     export default {
         name: "LoginView",
-        components: {
-            
-        }
+        data: function() {
+    return {
+    email: '',
+    password: '',
+}
+},
+methods: {
+LogIn() {
+    var data = {
+        email: this.email,
+        password: this.password
+    };
+    fetch("http://localhost:3000/auth/authenticate", {
+        method: "POST",
+        headers: {
+        "Content-Type": "application/json",
+        },
+        credentials: 'include', // KOOOKID
+        body: JSON.stringify(data),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data);
+    location.assign("/");
+    })
+    .catch((e) => {
+        console.log(e);
+        console.log("error");
+    });
+    },
+}, 
     }
     
     </script>
-
- 

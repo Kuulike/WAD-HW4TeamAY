@@ -1,6 +1,8 @@
 <template>
     <div class ="AllPosts">
         <div id = "post-list">
+            <button @click='this.$router.push("/login")' class="logOutButton">Log Out</button>                   
+            
             <h1>All Posts</h1>
             <section>
             <ul>
@@ -8,7 +10,9 @@
                     <Post :post="post"></Post> 
                 </div>
             </ul>
-            <button id="resetbutton" v-on:click="ResetLikes">RESET</button>
+
+            <button @click='this.$router.push("/addpost")' class="addPostButton">Add Post</button>
+            <button class="deleteAllButton">Delete All</button>
             </section>
         </div>
     </div>    
