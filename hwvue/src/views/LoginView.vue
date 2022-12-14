@@ -23,11 +23,11 @@
                     required>
                 </div>
                 <div class="container">
-                   
+                
                     <button @click="LogIn"  class="center">LogIn</button>
                     <p> or </p>
                     <button @click='this.$router.push("/signup")' class="center">Signup</button>
-                   
+                
                 </div>
                 <!--<button type="submit" formaction="#/" id="loginbutton">Login!</button>-->
             </div>
@@ -41,37 +41,35 @@
         name: "LoginView",
         data: function() {
     return {
-   email: '',
-   password: '',
-  }
-  },
-  methods: {
+    email: '',
+    password: '',
+}
+},
+methods: {
 LogIn() {
-      var data = {
+    var data = {
         email: this.email,
         password: this.password
-      };
-      fetch("http://localhost:3000/auth/authenticate", {
+    };
+    fetch("http://localhost:3000/auth/authenticate", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+        "Content-Type": "application/json",
         },
-          credentials: 'include', 
-          body: JSON.stringify(data),
-      })
-      .then((response) => response.json())
-      .then((data) => {
-      console.log(data);
-      location.assign("/");
-      })
-      .catch((e) => {
+        credentials: 'include', // KOOOKID
+        body: JSON.stringify(data),
+    })
+    .then((response) => response.json())
+    .then((data) => {
+    console.log(data);
+    location.assign("/");
+    })
+    .catch((e) => {
         console.log(e);
         console.log("error");
-      });
+    });
     },
-  }, 
+}, 
     }
     
     </script>
-
- 
