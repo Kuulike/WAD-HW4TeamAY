@@ -16,7 +16,7 @@
 
             <div class = "contentChangeButtons">
                 <button @click='this.$router.push("/addpost")' class="addPostButton">Add Post</button>
-                <button class="deleteAllButton">Delete All</button>
+                <button @click='Deleteall' class="deleteAllButton">Delete All</button>
             </div> 
             </section>
         </div>
@@ -61,10 +61,10 @@ export default{
                 console.log("error");
             });
     },
-    
 methods: {
-    Deleteall(){
-    fetch("http://localhost:3000/api/posts", {
+    /*
+    Deleteall() {
+        fetch("http://localhost:3000/api/posts", {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",
@@ -73,12 +73,23 @@ methods: {
             //body: JSON.stringify(data),
         })
             .then((response) => response.json())
-            .then((data) => this.posts = data)
+            //.then(() => this.status = response.status = "delete successful");
+            //.then((data) => this.posts = data)
             .catch((e) => {
                 console.log(e);
                 console.log("error");
             });
     },
+*/
+
+    Deleteall()  {
+  // Simple DELETE request with fetch
+        fetch('http://localhost:3000/api/posts', { method: 'DELETE',credentials: 'include',  })
+        .then(() => this.status = 'Delete successful');
+        window.location.reload();
+    },
+
+
 LogOut() {
     var data = {
         email: this.email,
