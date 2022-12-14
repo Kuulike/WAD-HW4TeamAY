@@ -4,17 +4,11 @@
       
     <div>
         <h1>Add Post</h1>
-        <label for="title">Title: </label>
-    <input name="title" type="text" id="title" required v-model="post.title" /><br/>
         <label for="body">Body: </label>
-        <input name="body" type="text" id="body" required v-model="post.body" /><br/>
-        
-    <label for="urllink">Url: </label>
-    <input name="urllink"  type="text" id="urllink" required v-model="post.urllink"/><br/>
-    
+        <input name="body" type="text" id="body" required v-model="post.body" /><br/>    
       <button @click="addPost" class="addpostbutton">Add post</button>
       
-                   
+                  
     </div>
         
   </section>
@@ -27,24 +21,23 @@
         data() {
     return {
       post: {
-        title: "",
+        timestamp:"",
         body: "",
-        urllink: "",
       },
     };
   },
   methods: {
     addPost() {
       var data = {
-        title: this.post.title,
+      
         body: this.post.body,
-        urllink: this.post.urllink,
       };
-      fetch("http://localhost:3000/api/posttable", {
+      fetch("http://localhost:3000/api/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: 'include',
         body: JSON.stringify(data),
       })
       .then((response) => {
