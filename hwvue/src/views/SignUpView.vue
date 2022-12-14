@@ -4,9 +4,10 @@
     <div class="logincontent">
         <h2>Welcome to PostIT</h2>
 
-        <form class="loginform" id="loginform">
+        <div class="loginform" id="loginform">
             <div class="logininput">
                 <label for="email">Email: </label>
+                <input type="email" id="email" name="email" placeholder="E-mail" required v-model="email">
                 <!--<input type="email" id="email" name="email" placeholder="E-mail" required v-model="email">-->
                 <input type="email" id="email" name="email" v-model="email">
             </div>
@@ -26,8 +27,8 @@
                 required v-model="password">
             </div>
             
-            <button type="submit" formaction="#/" id="loginbutton">Sign Up!</button>
-        </form>
+            <button type="submit" @click="SignUp" id="loginbutton">Sign Up!</button>
+        </div>
     </div>
 </section>
 
@@ -40,43 +41,41 @@
 export default {
     name: "SignUpView",
     components: {
+        
+    },
 
-    },
     data: function() {
-        return {
-        email: '',
-        password: '',
-    }
-},
-watch: {
-    password(value) {
-    this.password = value;
-    }
-},
-methods:{
-    SignUp() {
-        var data = {
-        email: this.email,
-        password: this.password
-        };
-        fetch("http://localhost:3000/auth/signup", {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json",
-        },
-            credentials: 'include', 
-            body: JSON.stringify(data),
-    })
-    .then((response) => response.json())
-    .then((data) => {
-    console.log(data);
-    this.$router.push("/");
-    })
-    .catch((e) => {
-        console.log(e);
-        console.log("error");
-    });
+        return  {
+                    email: '',
+                    password: '',
+                }
     },
+    methods: {
+        SignUp() {
+            var data = {
+                email: this.email,
+                password: this.password
+            };
+            // using Fetch - post method - send an HTTP post request to the specified URI with the defined body
+            fetch("http://localhost:3000/auth/signup", {
+                method: "POST",
+                headers: {
+                "Content-Type": "application/json",
+                },
+                credentials: 'include', //  Don't forget to specify this if you need cookies
+                body: JSON.stringify(data),
+            })
+            .then((response) => response.json())
+            .then((data) => {
+            console.log(data);
+            this.$router.push("/");
+            //location.assign("/");
+            })
+            .catch((e) => {
+                console.log(e);
+                console.log("error");
+            });
+        },
     }, 
 }
 
