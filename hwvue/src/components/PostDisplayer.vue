@@ -37,7 +37,7 @@ export default{
     return {
     posts:[ ]
     }
-},
+    },
     computed: {
         
     },
@@ -61,6 +61,7 @@ export default{
                 console.log("error");
             });
     },
+    
 methods: {
     Deleteall(){
     fetch("http://localhost:3000/api/posts", {
@@ -78,11 +79,6 @@ methods: {
                 console.log("error");
             });
     },
-}
-
-    }
-,
-methods: {
 LogOut() {
     var data = {
         email: this.email,
